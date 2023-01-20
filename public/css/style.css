@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&family=Poppins:wght@600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+/* sidebar */
+aside{
+  background-color: whitesmoke;
+  width: 225px;
+  /* border: 1px solid red; */
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+
+  
+}
+aside h2 {
+  font-family: 'Assistant', sans-serif;
+}
+
+.headerside {
+  background-color: blue;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,1)
+}
+
+.keluar {
+  text-align: center;
+}
+
+aside a {
+  text-decoration: none;
+  color: grey;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.active a{
+  color: blue !important;
+}
+.utama a:hover {
+  color: rgb(82, 82, 82);
+}
+/* akhir sidebar */
+
+/* nav */
+nav {
+  height: 109px;
+  margin-left: 200px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,1);
+  background-color: rgb(94, 93, 93);
+
+}
+nav h2 {
+  font-family: 'Poppins', sans-serif;
+}
+.isinav{
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+/* akhir nav */
+
+main section {
+  margin-left: 250px;
+  margin-top: 30px;
+  margin-right: 119px;
+  height: 550px;
+}
+main section h4 {
+  text-align: center;
+}
+table {
+  margin-left: 5px;
+  
+}
+.sec {
+  background-color: whitesmoke;
+  border-radius: 30px;
+}
+
+
+.product-content {
+  width: 225px;
+  border-radius: 25px;
+
+}
+.label-detail  {
+  font-size: 1.4em;
+}
+.label-detail1 {
+  font-size: 20px;
+
+}
+
+.dashcontent .product-content{
+  background-color: rgb(169, 225, 255);
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(255, 255, 255);
+  transition: 0.5s;
+}
+.dashcontent .product-content:hover {
+  transform: scale(1.14);
+}
+
+.dashcontent .product-content a {
+  background-color: white;
+}
+.dashcontent .product-content a:hover {
+  background-color: rgb(80, 181, 236);
+  color: white;
+}
