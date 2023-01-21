@@ -13,6 +13,15 @@
     @enderror
   </div>
   <div class="mb-3">
+    <label for="">Nama Supplier</label>
+    <select name="supplier_id" id="supplier_id" class="form-control select2">
+      <option disabled value>Pilih Nama Supplier</option>
+      @foreach ( $sup as $s)
+          <option value="{{ $s -> id }}">{{ $s->nama_supplier }}</option>
+      @endforeach
+    </select>
+  </div>
+  <div class="mb-3">
     <label for="">Harga</label>
     <input type="number" class="form-control @error('harga') is-invalid  @enderror" name="harga" value="{{ @old ('harga') }}" >
     @error('harga')

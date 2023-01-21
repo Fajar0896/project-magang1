@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Supply;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -14,8 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $data = Item::with('dataSupplier');
-        return view('item.index', compact('data'));
+        $data = Item::all();
+        return view('item.index', compact('data'))->with('supplier');
     }
 
     /**
@@ -25,7 +26,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('item.create');
+        $sup = Supply::all();
+        return view('item.create', compact ('sup'));
     }
 
     /**
@@ -38,11 +40,11 @@ class ItemController extends Controller
     {
         $request->validate ([
             'nama_barang'=> 'required',
+            'supplier_id'=> 'required',
             'harga'=> 'required',
             'stok'=> 'required',
         ]);
         $data = $request->all();
-        $data['id_supplier']= 1;
         Item::create($data);
         return redirect('/item');
     }
@@ -55,7 +57,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        return view('item.detail', compact('item') );
+        return view('item.detail', compact('item'))->with('supplier');
     }
 
     /**
@@ -66,7 +68,8 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        return view('item.edit', compact('item'));
+        $sup = Supply::all();
+        return view('item.edit', compact('item','sup'));
     }
 
     /**
@@ -80,6 +83,7 @@ class ItemController extends Controller
     {
         $request -> validate([
             'nama_barang'=> 'required',
+            'supplier_id'=> 'required',
             'harga'=> 'required',
             'stok'=> 'required',
         ]);

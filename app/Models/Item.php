@@ -11,9 +11,9 @@ class Item extends Model
     protected $guarded =['id'];
     protected $table ="items";
     protected $primaryKey = "id";
-    protected $fillable= ['id','nama_barang','harga','stok','id_supplier'];
+    protected $fillable= ['id','nama_barang','harga','stok','supplier_id'];
 
-    public function dataSupplier(){
+    public function supplier(){
         return $this->belongsTo(Supply::class);
     }
 }

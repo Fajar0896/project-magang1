@@ -22,8 +22,8 @@
               <tr>
                 <td>{{ $loop -> iteration }}</td>
                 <td>{{ $x ->nama_barang }}</td>
+                <td>{{ $x ->supplier->nama_supplier }}
                 <td>{{ $x ->harga }}</td>
-                <td>{{ $x ->id_supplier }}
                 </td>
                 <td>
                   <a href="/item/{{ $x->id }}/" class="btn btn-success"><i class="bi bi-list-task"></i>Detail</a>
