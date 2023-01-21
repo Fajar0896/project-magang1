@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('tgl_bayar');
             $table->biginteger('total_bayar');
-            $table->foreignId('id_transaksi');
+            $table->integer('id_transaksi');
             
 
             $table->timestamps();

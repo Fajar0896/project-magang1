@@ -23,7 +23,8 @@
                 <td>{{ $loop -> iteration }}</td>
                 <td>{{ $x ->nama_barang }}</td>
                 <td>{{ $x ->harga }}</td>
-                <td>{{ $x ->id_supplier }}</td>
+                <td>{{ $x ->id_supplier }}
+                </td>
                 <td>
                   <a href="/item/{{ $x->id }}/" class="btn btn-success"><i class="bi bi-list-task"></i>Detail</a>
                   <a href="/item/{{ $x->id }}/edit" class="btn btn-warning"><i class="bi bi-pencil-square"></i>Edit</a>

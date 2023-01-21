@@ -9,11 +9,9 @@ class Item extends Model
 {
     use HasFactory;
     protected $guarded =['id'];
-    protected $table = 'Items';
-    protected $primaryKey ="id";
-    protected $fillable = [
-        'id','nama_barang','harga','stok'
-,'id_supplier'];
+    protected $table ="items";
+    protected $primaryKey = "id";
+    protected $fillable= ['id','nama_barang','harga','stok','id_supplier'];
 
     public function dataSupplier(){
         return $this->belongsTo(Supply::class);

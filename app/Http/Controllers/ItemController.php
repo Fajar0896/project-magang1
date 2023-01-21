@@ -14,8 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $data = Item::all();
-        // dd ($data);
+        $data = Item::with('dataSupplier');
         return view('item.index', compact('data'));
     }
 

@@ -9,14 +9,11 @@ class Supply extends Model
 {
     use HasFactory;
     protected $guarded =['id'];
-    protected $table = 'supplies';
-    protected $primaryKey ="id";
-    protected $fillable = [
-        'id','nama_supplier','no_telp','alamat'
-    ];
+    protected $table ="supplies";
+    protected $primaryKey  = "id";
+    protected $fillable = ['id','nama_supplier','no_telp','alamat'];
 
-    public function dataItem(){
+    public function item(){
         return $this->hasMany(Item::class);
     }
 }
-
