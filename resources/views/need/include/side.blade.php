@@ -10,8 +10,8 @@
         <hr>
       </div>
 
-      <div class="utama @yield('trans')">
-        <a href="/transaksi" class=""><i class="bi bi-cash-stack"></i>Transaksi</a>
+      <div class="utama @yield('transaction')">
+        <a href="/transaction" class=""><i class="bi bi-cash-stack"></i>Transaksi</a>
         <hr>
       </div>
       <div class="utama @yield('payment')">
@@ -34,7 +34,7 @@
         <hr>
       </div>
 
-      <br><br><br><br>
+      <br><br><br>
       <div class="utama keluar">
         <a href="" class=""><i class="bi bi-box-arrow-left"></i>Log Out</a>
       </div>

@@ -23,9 +23,9 @@ Route::get('/', function () {
     return view('need.main');
 });
 
-Route::resource('buyer', BuyerController::class);
-Route::resource('item', ItemController::class);
-Route::resource('payment', PaymentController::class);
-Route::resource('supply', SupplyController::class);
-Route::resource('dashboard' , DashboardController::class);
-Route::resource('transaksi', TransactionController::class);
+Route::resource('/buyer', BuyerController::class);
+Route::resource('/item', ItemController::class);
+Route::resource('/payment', PaymentController::class);
+Route::resource('/supply', SupplyController::class);
+Route::resource('/dashboard' , DashboardController::class);
+Route::resource('/transaction', TransactionController::class);

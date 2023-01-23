@@ -11,8 +11,8 @@
             <thead>
               <th>No</th>
               <th>Nama Barang</th>
-              <th>Harga</th>
               <th>Nama Supplier</th>
+              <th>Harga</th>
               <th>Aksi</th>
             </thead>
             <tbody>

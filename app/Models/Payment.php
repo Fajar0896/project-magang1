@@ -9,5 +9,12 @@ class Payment extends Model
 {
     use HasFactory;
     protected $guarded=['id'];
+    protected $table ="payments";
+    protected $primaryKey  = "id";
+    protected $fillable = ['id','tgl_bayar','total_bayar','transaction_id'];
+
+    public function transaction(){
+        return $this->belongsTo(Transaction::class);
+    }
 }
 // MANY

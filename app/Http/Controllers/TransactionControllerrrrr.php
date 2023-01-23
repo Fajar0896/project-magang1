@@ -17,7 +17,7 @@ class TransactionController extends Controller
     public function index()
     {
         $data = Transaction::all();
-        return view('transaction.index', compact('data'))->with('buyer','item');
+        return view('transaksi.index', compact('data'))->with('buyer','item');
     }
 
     /**
@@ -29,7 +29,7 @@ class TransactionController extends Controller
     {
         $buyer = Buyer::all();
         $item = Item::all();
-        return view('transaction.create', compact('buyer','item'));
+        return view('transaksi.create',compact('buyer','item'));
     }
 
     /**
@@ -40,15 +40,17 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate([
+        $request ->validate([
             'item_id' => 'required',
             'buyer_id' => 'required',
-            'tanggal' => 'required',
             'jenis_pembayaran' => 'required',
+            'tanggal' => 'required',
         ]);
+
         $data = $request->all();
         Transaction::create($data);
-        return redirect('/transaction');
+        return redirect('/transaksi');
+
     }
 
     /**
@@ -59,7 +61,7 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
-        return view('transaction.detail', compact('transaction'))->with('buyer','item');
+        return view('transaksi.detail',compact('transaction'))->with('buyer','item');
     }
 
     /**
@@ -70,9 +72,7 @@ class TransactionController extends Controller
      */
     public function edit(Transaction $transaction)
     {
-        $buyer = Buyer::all();
-        $item = Item::all();
-        return view('transaction.edit', compact('transaction','buyer','item'));
+        //
     }
 
     /**
@@ -84,17 +84,7 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        $request -> validate([
-            'item_id' => 'required',
-            'buyer_id' => 'required',
-            'tanggal' => 'required',
-            'jenis_pembayaran' => 'required',
-        ]);
 
-        $datalama = Transaction::findOrfail($transaction->id);
-        $databaru = $request->all();
-        $datalama -> update($databaru);
-        return redirect('/transaction');
     }
 
     /**
@@ -105,7 +95,7 @@ class TransactionController extends Controller
      */
     public function destroy(Transaction $transaction)
     {
-        Transaction::destroy($transaction->id);
-        return redirect('/transaction');
+        Transaction::destroy($transaction);
+        return redirect('/transaksi');
     }
 }

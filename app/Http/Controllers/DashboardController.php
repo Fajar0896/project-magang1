@@ -12,6 +12,7 @@ use App\Models\Buyer;
 use App\Models\Item;
 use App\Models\Payment;
 use App\Models\Supply;
+use App\Models\Transaction;
 
 
 class DashboardController extends Controller
@@ -28,7 +29,8 @@ class DashboardController extends Controller
         $item=Item::all()->count();
         $pay=Payment::all()->count();
         $sup=Supply::all()->count();
-        return view('dashboard.index',compact('buy','item','pay','sup'));
+        $tran=Transaction::all()->count();
+        return view('dashboard.index',compact('buy','item','pay','sup','tran'));
     }
 
     /**

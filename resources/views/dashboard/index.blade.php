@@ -27,6 +27,11 @@
                     <p class="label-detail1"><i class="bi bi-people-fill"></i> Supplier</p>
                     <a href="/supply" class="btn mb-2">Details</a>
                 </div>
+                <div class=" col-lg-2 m-4 product-content text-center shadow">
+                    <p class="label-detail">{{ $tran }} Data</p>
+                    <p class="label-detail1"><i class="bi bi-cash-stack"></i> Transaksi</p>
+                    <a href="/transaction" class="btn mb-2">Details</a>
+                </div>
             </div>
         </div>
     </div>  

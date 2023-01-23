@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
-use App\Models\Tipe;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -17,7 +17,7 @@ class PaymentController extends Controller
     {
         $data = Payment::all();
         // dd($data);
-        return view('payment.index', compact('data'));
+        return view('payment.index', compact('data'))->with('transaction');
     }
 
     /**
@@ -27,7 +27,8 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        return view('payment.create');
+        $transaction = Transaction::all();
+        return view('payment.create', compact('transaction'));
     }
 
     /**
@@ -41,9 +42,9 @@ class PaymentController extends Controller
         $request -> validate([
             'tgl_bayar' => 'required',
             'total_bayar' => 'required',
+            'transaction_id' => 'required',
         ]);
         $data = $request->all();
-        $data['id_transaksi']= 1;
         Payment::Create($data);
         return redirect('/payment');
     }
@@ -56,7 +57,7 @@ class PaymentController extends Controller
      */
     public function show(Payment $payment)
     {
-        return view ('payment.detail', compact ('payment'));
+        return view ('payment.detail', compact ('payment'))->with('transaction');
     }
 
     /**
@@ -67,7 +68,8 @@ class PaymentController extends Controller
      */
     public function edit(Payment $payment)
     {
-        return view('payment.edit', compact('payment'));
+        $transaction = Transaction::all();
+        return view('payment.edit', compact('payment','transaction'));
     }
 
     /**
@@ -82,6 +84,7 @@ class PaymentController extends Controller
         $request -> validate([
             'tgl_bayar' => 'required',
             'total_bayar' => 'required',
+            'transaction_id' => 'required',
         ]);
 
         $datalama = Payment::findOrfail($payment->id);
